@@ -14,7 +14,8 @@ export class UsersService {
   ];
 
   create(createUserDto: CreateUserDto) {
-    const id = this.users[this.users.length - 1].id + 1;
+    const currentMaxId = this.users[this.users.length - 1]?.id || 0;
+    const id = currentMaxId + 1;
 
     const user: User = {
       id: id,
@@ -35,10 +36,25 @@ export class UsersService {
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+    const user = this.findOne(id);
+
+    const newUser: User = {
+      ...user,
+      ...updateUserDto,
+    };
+
+    const index = this.users.indexOf(user);
+
+    this.users[index] = newUser;
+
+    return newUser;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    const user = this.findOne(id);
+
+    const index = this.users.indexOf(user);
+
+    this.users.splice(index, 1);
   }
 }
