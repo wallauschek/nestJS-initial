@@ -34,6 +34,10 @@ export class UsersService {
       });
   }
 
+  getByEmail(email: string) {
+    return this.prisma.user.findUnique({ where: { email } });
+  }
+
   update(id: number, dto: UpdateUserDto): Promise<User> {
     this.findOne(id);
     const data: Prisma.UserUpdateInput = {
