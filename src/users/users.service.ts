@@ -24,11 +24,14 @@ export class UsersService {
   }
 
   findOne(id: number): Promise<User | null> {
-    const user = this.prisma.user.findUnique({ where: { id } });
-    if (user.catch) {
-      throw new EntityNotFoundError(`User with id #${id} was not found.`);
-    }
-    return user;
+    return this.prisma.user
+      .findUnique({ where: { id }, include: { posts: true } })
+      .then((user) => {
+        if (!user) {
+          throw new EntityNotFoundError(`User with id #${id} was not found.`);
+        }
+        return user;
+      });
   }
 
   update(id: number, dto: UpdateUserDto): Promise<User> {
