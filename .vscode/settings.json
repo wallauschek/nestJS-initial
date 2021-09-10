@@ -1,0 +1,18 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {
+        "prodToken": "foo",
+        "nonProdToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByb2ZwYXVsby5zYWx2YXRvcmVAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MzEzMTEzMTAsImV4cCI6MTYzMTM5NzcxMH0.B3KF1_70GOGP_UvO-Qe8hKfWoD8xZGo4e0XrVoq8x40"
+    },
+    "local": {
+        "host": "{{host}}",
+        "token": "{{$shared nonProdToken}}",
+        "secretKey": "devSecret"
+    },
+    "production": {
+        "host": "example.com",
+        "token": "{{$shared prodToken}}",
+        "secretKey" : "prodSecret"
+    }
+  }
+}

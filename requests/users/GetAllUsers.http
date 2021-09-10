@@ -1,2 +1,2 @@
-GET http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByb2ZwYXVsby5zYWx2YXRvcmVAZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE2MzEyODA0MTQsImV4cCI6MTYzMTI4MDcxNH0.xoSMKIXUo8nMo8SJcavYTpYnBaTKtBYtnw0XSsmXR5Y
+GET {{host}}/users
+Authorization: Bearer {{token}}

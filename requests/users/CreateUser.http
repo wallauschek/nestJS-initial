@@ -1,5 +1,6 @@
-POST http://localhost:3000/users
+POST {{host}}/users
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "email": "profpaulo.salvatore@gmail.com",
