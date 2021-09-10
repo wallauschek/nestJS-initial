@@ -1,0 +1,7 @@
+PATCH http://localhost:3000/posts/1
+Content-Type: application/json
+
+{
+  "title": "CRUD automático com NestJS e Prisma 2",
+  "content": "Aprenda a fazer um CRUD automático com NestJS e Prisma."
+}
