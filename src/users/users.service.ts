@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Prisma, User } from '@prisma/client';
+import { hash } from 'bcrypt';
+
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -9,9 +11,11 @@ import { EntityNotFoundError } from 'src/errors/entity-not-found.error';
 export class UsersService {
   constructor(private readonly prisma: PrismaService) {}
 
-  create(dto: CreateUserDto): Promise<User> {
+  async create(dto: CreateUserDto): Promise<User> {
+    const passwordHash = await hash(dto.password, 8);
     const data: Prisma.UserCreateInput = {
       ...dto,
+      password: passwordHash,
     };
 
     return this.prisma.user.create({

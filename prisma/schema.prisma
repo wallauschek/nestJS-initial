@@ -11,13 +11,14 @@ generator client {
 }
 
 model User {
-  id       String  @id @default(uuid())
-  email    String  @unique
-  name     String?
-  password String
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  password  String
+  createdAt DateTime @default(now())
 
-  posts Post[]
-  Token Token[]
+  posts  Post[]
+  tokens Token[]
 }
 
 model Post {
@@ -28,6 +29,8 @@ model Post {
 
   author   User?  @relation(fields: [authorId], references: [id])
   authorId String @default(uuid())
+
+  createdAt DateTime @default(now())
 }
 
 model Token {
