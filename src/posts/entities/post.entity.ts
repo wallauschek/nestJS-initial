@@ -1,9 +1,9 @@
 import { Prisma } from '@prisma/client';
 
 export class Post implements Prisma.PostUncheckedCreateInput {
-  id?: number;
+  id?: string;
   title: string;
   content?: string;
   published?: boolean;
-  authorId?: number;
+  authorId?: string;
 }

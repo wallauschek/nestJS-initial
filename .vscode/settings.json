@@ -1,0 +1,18 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {
+        "prodToken": "foo",
+        "nonProdToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlZHJvQHBlZHJvd2FsbGF1c2NoZWsuY29tLmJyIiwic3ViIjoiMWMzMzYyYTItZGVkNi00ZDkyLTgxNDYtMTlhN2Q1MzJmYWNkIiwiaWF0IjoxNjMxMzc1MzgyLCJleHAiOjE2MzEzNzU2ODJ9.EyQnT5EOPi_WxxQ4xCmIMv_BNnAVt0L2q6dHIX_SCSx9_fRoAJPF4gkeINnhtY7ZzUYmQsCt7NAbShSVDxWR3mf60KcSMrYe1NcfmiH4Ucofhvr5SrDALxFO7QxcWjEMk1u18ML7CBpGuHtnKD_MeUiFFu9XyF83MJZwdQts6FWRB9D9u-xs13ynfOq5Eid5BatIuRPIJNPXo_c5QuhGCk_uJu8Z2XeiK5TndPtX-VhI8yR3RTa9flgtkzvmuKCWw5487db0T0O-jWWXLBQ2EnN8a3Xvv1yUnc-CsaZmMUF_OFWAkqSB-IVtXwtQ7J_twCWoMUPcqtCt0OCsnfbwjg"
+    },
+    "local": {
+        "host": "http://localhost:3000",
+        "token": "{{$shared nonProdToken}}",
+        "secretKey": "devSecret"
+    },
+    "production": {
+        "host": "example.com",
+        "token": "{{$shared prodToken}}",
+        "secretKey" : "prodSecret"
+    }
+  }
+}

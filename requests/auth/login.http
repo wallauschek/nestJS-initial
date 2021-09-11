@@ -1,9 +1,7 @@
-POST {{host}}/users
+POST {{host}}/auth/login
 Content-Type: application/json
-Authorization: Bearer {{token}}
 
 {
   "email": "pedro@pedrowallauschek.com.br",
-  "name": "Pedro Wallauschek",
   "password": "12345"
 }

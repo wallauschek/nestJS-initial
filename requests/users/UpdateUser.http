@@ -1,7 +1,8 @@
-PATCH http://localhost:3000/users/1
+PATCH {{host}}/users/1
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-  "email": "profpaulo.salvatore@gmail.com",
-  "name": "Paulo Salvatore - New name"
+  "email": "pedro@pedrowallauschek.com.br",
+  "name": "Pedro Wallauschek - New name"
 }
