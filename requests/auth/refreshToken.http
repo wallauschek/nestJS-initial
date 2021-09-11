@@ -1,0 +1,2 @@
+POST {{host}}/auth/refreshToken
+Content-Type: application/json

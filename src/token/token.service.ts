@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import crypto from 'crypto';
+import { randomBytes } from 'crypto';
 import { Prisma, Token } from '.prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateTokenDto } from './dto/create-token.dto';
@@ -9,14 +9,13 @@ import { EntityNotFoundError } from 'src/errors/entity-not-found.error';
 export class TokenService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(dto: CreateTokenDto): Promise<Token> {
-    const { userId } = dto;
-    delete dto.userId;
-    const token = `${userId}${crypto.randomBytes(64).toString('hex')}`;
+  async create({ userId }: CreateTokenDto): Promise<Token> {
+    const token = `${userId}${randomBytes(64).toString('hex')}`;
+    const expiresAt = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7);
 
     const data: Prisma.TokenCreateInput = {
-      ...dto,
       refreshToken: token,
+      expiresDate: expiresAt,
       valid: true,
       user: {
         connect: {
@@ -39,13 +38,13 @@ export class TokenService {
         where: { refreshToken },
         include: { user: true },
       })
-      .then((token) => {
-        if (!token) {
+      .then((refreshToken) => {
+        if (!refreshToken) {
           throw new EntityNotFoundError(
             `RefreshToken #${refreshToken} was not found.`,
           );
         }
-        return token;
+        return refreshToken;
       });
   }
 
