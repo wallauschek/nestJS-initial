@@ -23,7 +23,7 @@ export class UsersService {
     return this.prisma.user.findMany();
   }
 
-  findOne(id: number): Promise<User | null> {
+  findOne(id: string): Promise<User | null> {
     return this.prisma.user
       .findUnique({ where: { id }, include: { posts: true } })
       .then((user) => {
@@ -38,7 +38,7 @@ export class UsersService {
     return this.prisma.user.findUnique({ where: { email } });
   }
 
-  update(id: number, dto: UpdateUserDto): Promise<User> {
+  update(id: string, dto: UpdateUserDto): Promise<User> {
     this.findOne(id);
     const data: Prisma.UserUpdateInput = {
       ...dto,
@@ -50,7 +50,7 @@ export class UsersService {
     });
   }
 
-  remove(id: number): Promise<User> {
+  remove(id: string): Promise<User> {
     this.findOne(id);
     return this.prisma.user.delete({ where: { id } });
   }

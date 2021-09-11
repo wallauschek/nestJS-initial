@@ -4,5 +4,5 @@ Content-Type: application/json
 {
   "title": "CRUD automático com NestJS e Prisma",
   "content": "Aprenda a fazer um CRUD automático com NestJS e Prisma",
-  "authorEmail": "profpaulo.salvatore@gmail.com"
+  "authorEmail": "pedro@pedrowallauschek.com.br"
 }

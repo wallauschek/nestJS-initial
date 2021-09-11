@@ -36,7 +36,7 @@ export class PostsService {
     });
   }
 
-  async findOne(id: number): Promise<Post | null> {
+  async findOne(id: string): Promise<Post | null> {
     return this.prisma.post
       .findUnique({
         where: { id },
@@ -56,7 +56,7 @@ export class PostsService {
     });
   }
 
-  async update(id: number, dto: UpdatePostDto): Promise<Post> {
+  async update(id: string, dto: UpdatePostDto): Promise<Post> {
     this.findOne(id);
     const data: Prisma.PostUpdateInput = {
       ...dto,
@@ -68,7 +68,7 @@ export class PostsService {
     });
   }
 
-  async remove(id: number): Promise<Post> {
+  async remove(id: string): Promise<Post> {
     this.findOne(id);
     return this.prisma.post.delete({ where: { id } });
   }
