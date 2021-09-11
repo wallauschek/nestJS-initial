@@ -26,6 +26,7 @@ CREATE TABLE "Token" (
     "id" TEXT NOT NULL,
     "refreshToken" TEXT NOT NULL,
     "expiresDate" TIMESTAMP(3) NOT NULL,
+    "valid" BOOLEAN NOT NULL DEFAULT false,
     "userId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -34,6 +35,9 @@ CREATE TABLE "Token" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Token_refreshToken_key" ON "Token"("refreshToken");
 
 -- AddForeignKey
 ALTER TABLE "Post" ADD CONSTRAINT "Post_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

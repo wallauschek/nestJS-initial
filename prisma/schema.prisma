@@ -35,8 +35,9 @@ model Post {
 
 model Token {
   id           String   @id @default(uuid())
-  refreshToken String
+  refreshToken String   @unique
   expiresDate  DateTime
+  valid        Boolean  @default(false)
 
   user   User?  @relation(fields: [userId], references: [id])
   userId String @default(uuid())
