@@ -2,7 +2,7 @@
   "rest-client.environmentVariables": {
     "$shared": {
         "prodToken": "foo",
-        "nonProdToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlZHJvQHBlZHJvd2FsbGF1c2NoZWsuY29tLmJyIiwic3ViIjoiY2U3MmEwNGMtY2U2Zi00MTgyLTkxYjAtMDkxMTQwYmY4MDZhIiwiaWF0IjoxNjMxMzE5OTA1LCJleHAiOjE2MzE0MDYzMDV9.9vQluqW6hurcE0mWQmKUNd8r7HoMeAUIV0WtMhzZZ28"
+        "nonProdToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlZHJvQHBlZHJvd2FsbGF1c2NoZWsuY29tLmJyIiwic3ViIjoiNjIxODM5MjEtYTZhOC00YjI5LWEwMDgtMDFiMDFmNjE5YWEwIiwiaWF0IjoxNjMxMzI2NTIxLCJleHAiOjE2MzE0MTI5MjF9.YTrOjthBiG6dttBdMdvyqcbRxFE9I_Vv77KGheFvS07-r_A69tMGTfjGs4faw0Y0GDJiUMulYTVTUjMk8PUO_JLOdoTIu3ZZylPxbbC5BDmTqtqqjvJnBT_wzlF_DGqxOB4VdVBrzqj6tSJAZ-JbHwlHk74qXWq3iGzR1xQ6cv9UUWWWhAJYemwZx6tJwHb2R-70uVamxhbbtLwvorsCKHfTPwxAjoOfGngzk4aOpZ_NfTEs5eAveugpdvKRQM30SZsKOiygDFoEV-m2IXcNZRuNGQbe3USgI73lHmb3rq0kcGxKit93v5jyPJm304GpqbXZ1akau6sfGMj3r28BSQ"
     },
     "local": {
         "host": "http://localhost:3000",
