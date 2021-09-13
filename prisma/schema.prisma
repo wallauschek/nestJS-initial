@@ -17,20 +17,7 @@ model User {
   password  String
   createdAt DateTime @default(now())
 
-  posts  Post[]
   tokens Token[]
-}
-
-model Post {
-  id        String   @id @default(uuid())
-  title     String
-  content   String?
-  published Boolean? @default(false)
-
-  author   User?  @relation(fields: [authorId], references: [id])
-  authorId String @default(uuid())
-
-  createdAt DateTime @default(now())
 }
 
 model Token {
@@ -43,4 +30,24 @@ model Token {
   userId String @default(uuid())
 
   createdAt DateTime @default(now())
+}
+
+model Aluno {
+  id                  String   @id @default(uuid())
+  nomeDoAluno         String
+  cpfDoAluno          String?
+  nascimentoDoAluno   DateTime
+  emailDoAluno        String?
+  telefoneDoAluno     String?
+  naturalidadeDoAluno String
+  natalDoAluno        String
+  sexoDoAluno         String
+  logradouroDoAluno   String
+  numeroDoAluno       Int
+  complementoDoAluno  String?
+  bairroDoAluno       String
+  municipioDoAluno    String
+  cepDoAluno          String
+  ufDoAluno           String
+  createdAt           DateTime @default(now())
 }

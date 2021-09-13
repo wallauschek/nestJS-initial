@@ -3,11 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import { PostsModule } from './posts/posts.module';
+import { AlunosModule } from './alunos/alunos.module';
 import { TokenModule } from './token/token.module';
 
 @Module({
-  imports: [AuthModule, UsersModule, PostsModule, TokenModule],
+  imports: [AuthModule, UsersModule, AlunosModule, TokenModule],
   controllers: [AppController],
   providers: [AppService],
 })

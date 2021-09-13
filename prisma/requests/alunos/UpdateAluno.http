@@ -1,4 +1,4 @@
-PATCH {{host}}/posts/1
+PATCH {{host}}/alunos/1
 Content-Type: application/json
 
 {

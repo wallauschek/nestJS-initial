@@ -28,14 +28,12 @@ export class UsersService {
   }
 
   findOne(id: string): Promise<User | null> {
-    return this.prisma.user
-      .findUnique({ where: { id }, include: { posts: true } })
-      .then((user) => {
-        if (!user) {
-          throw new EntityNotFoundError(`User with id #${id} was not found.`);
-        }
-        return user;
-      });
+    return this.prisma.user.findUnique({ where: { id } }).then((user) => {
+      if (!user) {
+        throw new EntityNotFoundError(`User with id #${id} was not found.`);
+      }
+      return user;
+    });
   }
 
   getByEmail(email: string) {

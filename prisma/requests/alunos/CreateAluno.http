@@ -1,0 +1,21 @@
+POST {{host}}/alunos
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "bairroDoAluno": "Laranjeiras",
+    "cepDoAluno": "22231200",
+    "complementoDoAluno": "301",
+    "cpfDoAluno": "084.171.547-52",
+    "emailDoAluno": "tibarj@gmail.com",
+    "logradouroDoAluno": "Rua Moura Brasil",
+    "municipioDoAluno": "Rio de Janeiro",
+    "nascimentoDoAluno": "10/04/1981",
+    "natalDoAluno": "Rio de Janeiro",
+    "naturalidadeDoAluno": "Rio de Janeiro",
+    "nomeDoAluno": "Pedro Wallauschek",
+    "numeroDoAluno": 60,
+    "sexoDoAluno": "Masculino",
+    "telefoneDoAluno": "(21)98881-2553",
+    "ufDoAluno": "RJ"
+}
